@@ -2,10 +2,66 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Demo</title>
+	<title>年会抽奖系统</title>
+	<link rel="stylesheet" href="public/css/reset.min.css">
 	<link rel="stylesheet" href="public/bower_components/animate.css/animate.min.css">
+	<link rel="stylesheet" href="public/css/main.css">
 </head>
 <body>
-	<h1 class="animated pulse" align="center">Success</h1>
+<div class="content pos-allc">
+	<div class="blocks"></div>
+	<div class="btn pos-allc">
+		<div class="border">
+			<div class="row1"></div>
+			<div class="row2"></div>
+			<div class="col1"></div>
+			<div class="col2"></div>
+			<div class="lightsWrap">
+				<div class="light"></div>
+			</div>
+		</div>
+		<div class="rollStatus sStart">
+			<b class="start btn-txt pos-allc knewoneShake">开始抽奖</b>
+			<div class="rolling pos-allc knewoneShake fastSpeed">
+				<div>不要停</div>
+				<div>用力点!</div>
+			</div>
+			<div class="ending pos-allc knewoneShake fastSpeed">
+				<div>唔...</div>
+				<div id="willwill">要停啦!</div>
+			</div>
+		</div>
+		<div class="btn-bgColor pos-allc">
+			<div class="btn-bgImg pos-allc"></div>
+		</div>
+	</div>
+</div>
+<div class="resultMask">
+	<canvas id="canvas"></canvas>
+	<img src="public/images/winTitle.png" class="winTitle bounceInDown animated normalWin">
+	<img src="public/images/eggTitle.png" class="winTitle bounceInDown animated eggWin">
+	<div class="resultContent">
+		<div class="winnerWrap pos-allc">
+			<img src="public/large_photos/1.jpg" class="pos-allc bounceIn animated" id="winner">
+		</div>
+		<div class="machineWrap pos-allc">
+			<div class="randMachine pos-allc">
+				<img src="public/images/machineBg.png" class="machineBg">
+				<img src="public/images/shadow.png" class="machineShadow">
+				<div class="numWrap">
+					<div class="num"><div class="light"></div></div>
+					<div class="num"><div class="light"></div></div>
+					<div class="num"><div class="light"></div></div>
+					<div class="num"><div class="light"></div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="public/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="public/js/confetti.js"></script>
+<script src="public/js/easing.js"></script>
+<script src="public/js/lottery.js"></script>
+<script src="public/js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,96 @@
+body{font-family:'PingFang SC';background:rgba(0,0,0,0.5);}
+.pos-allc{position:absolute;top:0;right:0;bottom:0;left:0;margin:auto;}
+
+.content{overflow:hidden;width:1024px;height:768px;}
+.content .line{height:128px;}
+.blocks .block:nth-child(19),.blocks .block:nth-child(25){margin-right:256px;}
+.block{float:left;width:128px;height:128px;opacity:0;transform-style:preserve-3d;}
+.block:after,.block.out:before{position:absolute;top:0;left:0;width:128px;height:128px;content:'';}
+.block:after{display:none;background:rgba(0,0,0,0.6);}
+.block.mask:after{display:block;}
+.block.out:before{z-index:1;background:url(../images/out.png) rgba(0,0,0,0.6);}
+.block.out.mask:after{z-index:2;display:block!important;}
+.block img{position:absolute;top:0;left:0;display:block;width:100%;height:100%;transition:all 0.6s;}
+
+.delay{animation-duration:1.25s!important;}
+.block.changing{transition:transform 0.6s;transform:translateZ(-64px) rotateX(90deg);}
+.block img:nth-child(1){transform:translateZ(64px);}
+.block img:nth-child(2){transform:rotateX(-90deg) translateZ(64px);}
+/**
+ * 抽奖按钮
+ */
+.btn{z-index:100;display:block;width:262px;height:262px;}
+.btn img{position:absolute;}
+.btn .btn-bgColor{overflow:hidden;width:244px;height:244px;background:#FD5135;}
+.btn .btn-bgImg{width:244px;height:244px;background:url(../images/btn-bg.png);}
+.btn .btn-bgImg:not(.heiheihei){animation:animatedBackground 2s ease-out infinite;}
+.btn .btn-bgImg.heiheihei{background:url(../images/heiheihei.jpg);background-size:100% 100%;}
+@keyframes animatedBackground{0%{background-position:0 0;} 50%{background-position:-100% 0;} 100%{background-position:0 0;}}
+.btn .btn-txt{font-size:48px;font-weight:bold;width:100%;height:44px;text-align:center;color:#FFFFFF;}
+/**
+ * 跑马灯
+ */
+.border{width:100%;height:100%;}
+.row1,.row2,.col1,.col2{position:absolute;z-index:1;background:#7B0505;}
+.row1,.row2{width:100%;height:16px;}
+.col1,.col2{width:16px;height:100%;}
+.row1{top:2px;left:0;}
+.row2{bottom:2px;left:0;}
+.col1{top:0;left:2px;}
+.col2{top:0;right:2px;}
+.lightsWrap{position:absolute;z-index:2;top:2px;left:2px;width:258px;height:258px;}
+.lightsWrap .normal{-webkit-transition:all 1.2s ease;}
+.lightsWrap .fast{-webkit-transition:all 0.2s ease;}
+.lightsWrap .light{position:absolute;z-index:3;width:10px;height:10px;-webkit-transition:opacity 1s ease;opacity:0.2;border-radius:50%;background:#FFF100;}
+.lightsWrap .light.active{-webkit-transition:opacity 0.1s ease;opacity:1;}
+/**
+ * knewoneShake
+ */
+.knewoneShake{animation:knewoneShake 2000ms ease-in-out infinite;}
+.knewoneShake.fastSpeed{-webkit-animation-duration:80ms;}
+@-webkit-keyframes knewoneShake{0%{-webkit-transform:translate(0px, 0px) rotate(0deg);}2%{-webkit-transform:translate(0.5px, -0.5px) rotate(0.5deg);}4%{-webkit-transform:translate(-0.5px, -2.5px) rotate(-1.5deg);}6%{-webkit-transform:translate(0.5px, -0.5px) rotate(-0.5deg);}8%{-webkit-transform:translate(-2.5px, 0.5px) rotate(0.5deg);}10%{-webkit-transform:translate(-1.5px, -1.5px) rotate(0.5deg);}12%{-webkit-transform:translate(1.5px, 0.5px) rotate(-1.5deg);}14%{-webkit-transform:translate(1.5px, -2.5px) rotate(-0.5deg);}16%{-webkit-transform:translate(-2.5px, -1.5px) rotate(-0.5deg);}18%{-webkit-transform:translate(-0.5px, 0.5px) rotate(-0.5deg);}20%{-webkit-transform:translate(-1.5px, 1.5px) rotate(0.5deg);}22%{-webkit-transform:translate(-1.5px, -2.5px) rotate(-1.5deg);}24%{-webkit-transform:translate(0.5px, 0.5px) rotate(-1.5deg);}26%{-webkit-transform:translate(-1.5px, 1.5px) rotate(0.5deg);}28%{-webkit-transform:translate(0.5px, 1.5px) rotate(0.5deg);}30%{-webkit-transform:translate(-0.5px, -1.5px) rotate(-1.5deg);}32%{-webkit-transform:translate(-2.5px, 1.5px) rotate(-0.5deg);}34%{-webkit-transform:translate(-1.5px, 1.5px) rotate(-1.5deg);}36%{-webkit-transform:translate(-2.5px, -0.5px) rotate(0.5deg);}38%{-webkit-transform:translate(-2.5px, -2.5px) rotate(-1.5deg);}40%{-webkit-transform:translate(-0.5px, -0.5px) rotate(-0.5deg);}42%{-webkit-transform:translate(-1.5px, 1.5px) rotate(0.5deg);}44%{-webkit-transform:translate(0.5px, 1.5px) rotate(-0.5deg);}46%{-webkit-transform:translate(1.5px, 1.5px) rotate(-0.5deg);}48%{-webkit-transform:translate(-2.5px, 1.5px) rotate(0.5deg);}50%{-webkit-transform:translate(0.5px, 1.5px) rotate(-1.5deg);}52%{-webkit-transform:translate(-1.5px, -2.5px) rotate(0.5deg);}54%{-webkit-transform:translate(1.5px, -1.5px) rotate(0.5deg);}56%{-webkit-transform:translate(1.5px, 0.5px) rotate(-1.5deg);}58%{-webkit-transform:translate(-2.5px, 1.5px) rotate(-1.5deg);}60%{-webkit-transform:translate(0.5px, 0.5px) rotate(-0.5deg);}62%{-webkit-transform:translate(-2.5px, -1.5px) rotate(0.5deg);}64%{-webkit-transform:translate(0.5px, 0.5px) rotate(-1.5deg);}66%{-webkit-transform:translate(1.5px, -0.5px) rotate(-1.5deg);}68%{-webkit-transform:translate(0.5px, 1.5px) rotate(-0.5deg);}70%{-webkit-transform:translate(-1.5px, -2.5px) rotate(-0.5deg);}72%{-webkit-transform:translate(-1.5px, 0.5px) rotate(0.5deg);}74%{-webkit-transform:translate(0.5px, -0.5px) rotate(0.5deg);}76%{-webkit-transform:translate(1.5px, -0.5px) rotate(-0.5deg);}78%{-webkit-transform:translate(-1.5px, 1.5px) rotate(-0.5deg);}80%{-webkit-transform:translate(-0.5px, -1.5px) rotate(-0.5deg);}82%{-webkit-transform:translate(1.5px, -1.5px) rotate(-0.5deg);}84%{-webkit-transform:translate(0.5px, 1.5px) rotate(0.5deg);}86%{-webkit-transform:translate(0.5px, -0.5px) rotate(0.5deg);}88%{-webkit-transform:translate(-2.5px, 1.5px) rotate(-0.5deg);}90%{-webkit-transform:translate(-1.5px, -0.5px) rotate(-0.5deg);}92%{-webkit-transform:translate(0.5px, 1.5px) rotate(-0.5deg);}94%{-webkit-transform:translate(0.5px, 1.5px) rotate(-0.5deg);}96%{-webkit-transform:translate(-1.5px, 1.5px) rotate(-1.5deg);}98%{-webkit-transform:translate(0.5px, -0.5px) rotate(-0.5deg);}}
+/**
+ * 不要停，用力点
+ */
+.rollStatus{position:absolute;z-index:4;top:0;left:0;width:100%;height:100%;}
+.rolling{font-size:48px;font-weight:bold;z-index:4;display:none;width:258px;height:2em;text-align:center;color:#FFFFFF;}
+.rolling div:nth-child(1){transform:translate(-15px,-15px) rotate(-16deg);}
+.rolling div:nth-child(2){transform:translate(10px,10px);}
+
+.ending{font-size:48px;font-weight:bold;z-index:4;display:none;width:258px;height:2em;text-align:center;color:#FFFFFF;}
+.ending div:nth-child(1){transform:translate(0,-10px);}
+.ending div:nth-child(2){transform:translate(0,10px);}
+
+.rollStatus .start,.rollStatus .rolling,.rollStatus .ending{display:none;}
+.sStart .start{display:block;}
+.sRolling .rolling{display:block;}
+.sEnding .ending{display:block;}
+
+
+.resultMask{position:fixed;z-index:999;right:0;left:0;display:none;width:100%;height:100%;background:rgba(0,0,0,0.74);}
+#winner{z-index:-1;display:block;max-width:584px;max-height:386px;border-radius:10px;}
+.winTitle{position:absolute;top:50%;right:0;left:0;display:none;margin:-280px auto 0;}
+
+.resultMask.normal .normalWin{display:block;}
+.resultMask.egg .eggWin{display:block;}
+
+
+.machineWrap{width:584px;height:386px;}
+.randMachine{overflow:hidden;/*opacity:0;*/width:417px;height:352px;}
+.machineBg{position:absolute;z-index:1;}
+.machineShadow{position: absolute;left: 16px;top: 102px;z-index: 2;}
+.randMachine .num{float:left;width:94px;height:234px;/*display:none;*/position:relative;}
+.randMachine .num .light{width:100%;height:50%;position:absolute;top:0;left:0;background:#FFF;opacity:.05;}
+.randMachine .numWrap{width:386px;height:234px;margin:102px 0 0 16px;background:#543e36;}
+.randMachine .numWrap .num:nth-last-child(1){margin-right:0;}
+.num{background:url(../images/num.jpg) top center repeat-y;width:94px;height:234;float:left;margin-right:3px;}
+
+.winnerWrap{width:584px;height:386px;}
+
+
+.resultContent{position:absolute;z-index:-1;top:0;right:0;bottom:0;left:0;width:584px;height:386px;margin:auto;transform-style:preserve-3d;}
+.resultContent .winnerWrap{position:absolute;top:0;left:0;display:block;transition:all 0.6s;}
+
+.resultContent.ac{transition:transform 0.6s;transform:translateZ(-193px) rotateX(90deg);}
+.resultContent .winnerWrap{transform:translateZ(193px);}
+.resultContent .machineWrap{transform:rotateX(-90deg) translateZ(193px);}
